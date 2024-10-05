@@ -46,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
   newTaskForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const description = newTaskDescription.value.trim();
-    const priority = newTaskPriority.value;
+    const priority =
+      newTaskPriority.options[newTaskPriority.selectedIndex].text; // Get the text of the selected option
 
     if (description) {
       taskList.createNewTask(description, priority);
